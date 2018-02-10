@@ -1,5 +1,5 @@
 # nuklear-examples-vcpkg
-The nuklear gui examples ported to work with vcpkg.
+The nuklear gui examples ported to work with vcpkg including ports of unistd.h, getopt.h, getopt.c and dirent.h for the file_browser example.
 
 ## Building
 
@@ -22,3 +22,5 @@ Create visual studio solution file:
 ```
 cmake .. -DCMAKE_TOOLCHAIN_FILE=C:\path\to\vcpkg\scripts\buildsystems\vcpkg.cmake"
 ```
+
+Open in visual studio and run with Start Debugging (F5) or Start without Debugging (Ctrl+F5).
