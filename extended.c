@@ -638,9 +638,9 @@ device_draw(struct device *dev, struct nk_context *ctx, int width, int height,
 {
 	GLfloat ortho[4][4] = {
 		{ 2.0f, 0.0f, 0.0f, 0.0f },
-		{ 0.0f,-2.0f, 0.0f, 0.0f },
-		{ 0.0f, 0.0f,-1.0f, 0.0f },
-		{ -1.0f,1.0f, 0.0f, 1.0f },
+	{ 0.0f,-2.0f, 0.0f, 0.0f },
+	{ 0.0f, 0.0f,-1.0f, 0.0f },
+	{ -1.0f,1.0f, 0.0f, 1.0f },
 	};
 	ortho[0][0] /= (GLfloat)width;
 	ortho[1][1] /= (GLfloat)height;
@@ -680,9 +680,9 @@ device_draw(struct device *dev, struct nk_context *ctx, int width, int height,
 			struct nk_convert_config config;
 			static const struct nk_draw_vertex_layout_element vertex_layout[] = {
 				{ NK_VERTEX_POSITION, NK_FORMAT_FLOAT, NK_OFFSETOF(struct nk_glfw_vertex, position) },
-				{ NK_VERTEX_TEXCOORD, NK_FORMAT_FLOAT, NK_OFFSETOF(struct nk_glfw_vertex, uv) },
-				{ NK_VERTEX_COLOR, NK_FORMAT_R8G8B8A8, NK_OFFSETOF(struct nk_glfw_vertex, col) },
-				{ NK_VERTEX_LAYOUT_END }
+			{ NK_VERTEX_TEXCOORD, NK_FORMAT_FLOAT, NK_OFFSETOF(struct nk_glfw_vertex, uv) },
+			{ NK_VERTEX_COLOR, NK_FORMAT_R8G8B8A8, NK_OFFSETOF(struct nk_glfw_vertex, col) },
+			{ NK_VERTEX_LAYOUT_END }
 			};
 			NK_MEMSET(&config, 0, sizeof(config));
 			config.vertex_layout = vertex_layout;

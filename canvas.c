@@ -210,9 +210,9 @@ device_draw(struct device *dev, struct nk_context *ctx, int width, int height,
 {
 	GLfloat ortho[4][4] = {
 		{ 2.0f, 0.0f, 0.0f, 0.0f },
-		{ 0.0f,-2.0f, 0.0f, 0.0f },
-		{ 0.0f, 0.0f,-1.0f, 0.0f },
-		{ -1.0f,1.0f, 0.0f, 1.0f },
+	{ 0.0f,-2.0f, 0.0f, 0.0f },
+	{ 0.0f, 0.0f,-1.0f, 0.0f },
+	{ -1.0f,1.0f, 0.0f, 1.0f },
 	};
 	ortho[0][0] /= (GLfloat)width;
 	ortho[1][1] /= (GLfloat)height;
@@ -252,9 +252,9 @@ device_draw(struct device *dev, struct nk_context *ctx, int width, int height,
 			struct nk_convert_config config;
 			static const struct nk_draw_vertex_layout_element vertex_layout[] = {
 				{ NK_VERTEX_POSITION, NK_FORMAT_FLOAT, NK_OFFSETOF(struct nk_glfw_vertex, position) },
-				{ NK_VERTEX_TEXCOORD, NK_FORMAT_FLOAT, NK_OFFSETOF(struct nk_glfw_vertex, uv) },
-				{ NK_VERTEX_COLOR, NK_FORMAT_R8G8B8A8, NK_OFFSETOF(struct nk_glfw_vertex, col) },
-				{ NK_VERTEX_LAYOUT_END }
+			{ NK_VERTEX_TEXCOORD, NK_FORMAT_FLOAT, NK_OFFSETOF(struct nk_glfw_vertex, uv) },
+			{ NK_VERTEX_COLOR, NK_FORMAT_R8G8B8A8, NK_OFFSETOF(struct nk_glfw_vertex, col) },
+			{ NK_VERTEX_LAYOUT_END }
 			};
 			NK_MEMSET(&config, 0, sizeof(config));
 			config.vertex_layout = vertex_layout;
@@ -375,8 +375,8 @@ canvas_begin(struct nk_context *ctx, struct nk_canvas *canvas, nk_flags flags,
 
 	/* create/update window and set position + size */
 	flags = flags & ~NK_WINDOW_DYNAMIC;
+	nk_window_set_bounds(ctx, "Window", nk_rect(x, y, width, height));
 	nk_begin(ctx, "Window", nk_rect(x, y, width, height), NK_WINDOW_NO_SCROLLBAR | flags);
-	nk_window_set_bounds(ctx, nk_rect(x, y, width, height));
 
 	/* allocate the complete window space for drawing */
 	{struct nk_rect total_space;

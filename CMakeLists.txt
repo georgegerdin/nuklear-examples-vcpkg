@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.5)
 
-project(nuklear-canvas)
+project(nuklear-examples-vcpkg)
 
 find_package(GLEW REQUIRED)
 find_package(glfw3 REQUIRED)
